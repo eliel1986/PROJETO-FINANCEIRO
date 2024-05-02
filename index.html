@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Controle de gastos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
 </head>
 
 <body>
-    <form action="">
-        <div>
+    <form>
+        <div class="form-field">
             <div><label for="">Email</label></div>
-            <input type="email" name="email" id="email" onchange="validateFields()" placeholder="seu@email.com">
+            <input type="email" name="email" id="email" onchange="onChangeEmail()" placeholder="seu@email.com">
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>
         </div>
-        <div>
+        <div class="form-field">
             <div><label for="">Senha</label></div>
-            <input type="password" name="password" id="password" onchange="validateFields()" placeholder="Senha">
+            <input type="password" name="password" id="password" onchange="onChangePassword()" placeholder="Senha">
+            <div class="error" id="password-required-error">Senha é obrigatória</div>
         </div>
         <div>
             <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar senha</button>
@@ -31,6 +35,7 @@
 </body>
 
 <script src="script.js"></script>
+<script src="validations.js"></script>
 
 </html>
 
