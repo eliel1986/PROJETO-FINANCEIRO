@@ -9,13 +9,13 @@ function onChangePassword() {
 }
 
 function login() {
-    firebase.auth().signInWithEmailAndPassword('eliel_1986@hotmail.com', '123456').then(response => {
-        console.log('sucess', response)
-
+    firebase.auth().signInWithEmailAndPassword(
+        form.email().value, form.password().value
+    ).then(response => {
+        window.location.href = 'pages/home/home.html';
     }).catch(error => {
         console.log('error', error)
     });
-    //window.location.href = 'pages/home/home.html';
 }
 
 function register() {
