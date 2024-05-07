@@ -14,8 +14,15 @@ function login() {
     ).then(response => {
         window.location.href = 'pages/home/home.html';
     }).catch(error => {
-        console.log('error', error)
+        alert(getErrorMessage(error));
     });
+}
+
+function getErrorMessage(error) {
+    if (error.code == 'auth/user-not-found') {
+        return 'Usuário não encontrado';
+    }
+    return error.message;
 }
 
 function register() {
