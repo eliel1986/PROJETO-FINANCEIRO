@@ -33,7 +33,7 @@ function register() {
 
 function recoverPassword() {
     showLoading();
-    firebase.auth().sendPasswordResetEmail(document.getElementById("email").value).then(() => {
+    firebase.auth().sendPasswordResetEmail(document.getElementById("recover-password-button").value).then(() => {
    // firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
         hideLoading();
         alert('Email enviado com sucesso');
