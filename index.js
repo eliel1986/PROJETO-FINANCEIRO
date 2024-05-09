@@ -16,7 +16,6 @@ function login() {
         window.location.href = 'pages/home/home.html';
     }).catch(error => {
         hideLoading();
-        /*alert(error.code);*/
         alert(getErrorMessage(error));
     });
 }
@@ -34,7 +33,8 @@ function register() {
 
 function recoverPassword() {
     showLoading();
-    firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
+    firebase.auth().sendPasswordResetEmail(document.getElementById("email").value).then(() => {
+   // firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {
         hideLoading();
         alert('Email enviado com sucesso');
     }).catch(error => {
